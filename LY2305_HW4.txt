@@ -1,0 +1,364 @@
+HW4 LY2305
+
+1. Give a count of all videos currently out
+   select count(1) from rental r
+   where r.return_date is NULL
+	output: 183
+
+2. Make a list of all customer names who have videos out and how much they owe
+   select c.customer_id, c.first_name, c.last_name, count(c.customer_id) as c
+   from rental r
+   join customer c on c.customer_id = r.customer_id
+   where r.return_date is NULL
+   group by c.customer_id
+   order by c asc;
+	ouput:
+ customer_id | first_name |  last_name  | c 
+-------------+------------+-------------+---
+          23 | Sarah      | Lewis       | 1
+         120 | Sylvia     | Ortiz       | 1
+         337 | Jerry      | Jordon      | 1
+         227 | Colleen    | Burton      | 1
+         264 | Gwendolyn  | May         | 1
+         410 | Curtis     | Irby        | 1
+         497 | Gilbert    | Sledge      | 1
+          80 | Marilyn    | Ross        | 1
+         190 | Yolanda    | Weaver      | 1
+         452 | Tom        | Milner      | 1
+         496 | Tyler      | Wren        | 1
+         274 | Naomi      | Jennings    | 1
+         412 | Allen      | Butterfield | 1
+         115 | Wendy      | Harrison    | 1
+         525 | Adrian     | Clary       | 1
+	 236 | Marcia     | Dean        | 1
+         450 | Jay        | Robb        | 1
+         192 | Laurie     | Lawrence    | 1
+         527 | Cory       | Meehan      | 1
+         424 | Kyle       | Spurlock    | 1
+         193 | Katie      | Elliott     | 1
+         279 | Dianne     | Shelton     | 1
+         100 | Robin      | Hayes       | 1
+           9 | Margaret   | Moore       | 1
+         411 | Norman     | Currier     | 1
+          64 | Judith     | Cox         | 1
+         394 | Chris      | Brothers    | 1
+         374 | Jeremy     | Hurtado     | 1
+         244 | Viola      | Hanson      | 1
+         582 | Andy       | Vanhorn     | 1
+         300 | John       | Farnsworth  | 1
+         548 | Allan      | Cornish     | 1
+         315 | Kenneth    | Gooden      | 1
+         533 | Jessie     | Milam       | 1
+          29 | Angela     | Hernandez   | 1
+          41 | Stephanie  | Mitchell    | 1
+         186 | Holly      | Fox         | 1
+         234 | Claudia    | Fuller      | 1
+         263 | Hilda      | Hopkins     | 1
+         550 | Guy        | Brownlee    | 1
+         211 | Stacey     | Montgomery  | 1
+          99 | Emily      | Diaz        | 1
+          83 | Louise     | Jenkins     | 1
+          28 | Cynthia    | Young       | 1
+          94 | Norma      | Gonzales    | 1
+         474 | Dustin     | Gillette    | 1
+         162 | Lauren     | Hudson      | 1
+         200 | Jeanne     | Lawson      | 1
+          73 | Beverly    | Brooks      | 1
+         585 | Perry      | Swafford    | 1
+          56 | Gloria     | Cook        | 1
+         355 | Terry      | Grissom     | 1
+         590 | Seth       | Hannon      | 1
+         579 | Daryl      | Larue       | 1
+         214 | Kristin    | Johnston    | 1
+         180 | Stacy      | Cunningham  | 1
+         251 | Vickie     | Brewer      | 1
+         101 | Peggy      | Myers       | 1
+          44 | Marie      | Turner      | 1
+         330 | Scott      | Shelley     | 1
+         568 | Alberto    | Henning     | 1
+          58 | Jean       | Bell        | 1
+         359 | Willie     | Markham     | 1
+         213 | Gina       | Williamson  | 1
+         438 | Barry      | Lovelace    | 1
+         596 | Enrique    | Forsythe    | 1
+         405 | Leonard    | Schofield   | 1
+         111 | Carmen     | Owens       | 1
+         168 | Regina     | Berry       | 1
+         373 | Louis      | Leone       | 1
+          22 | Laura      | Rodriguez   | 1
+         349 | Joe        | Gilliland   | 1
+          91 | Lois       | Butler      | 1
+         199 | Beth       | Franklin    | 1
+         495 | Charlie    | Bess        | 1
+         417 | Travis     | Estep       | 1
+         587 | Sergio     | Stanfield   | 1
+         532 | Neil       | Renner      | 1
+         287 | Becky      | Miles       | 1
+         422 | Melvin     | Ellington   | 1
+         327 | Larry      | Thrasher    | 1
+          21 | Michelle   | Clark       | 1
+         152 | Alicia     | Mills       | 1
+         335 | Gregory    | Mauldin     | 1
+         570 | Ivan       | Cromwell    | 1
+           5 | Elizabeth  | Brown       | 1
+         561 | Ian        | Still       | 1
+         229 | Tamara     | Nguyen      | 1
+         245 | Courtney   | Day         | 1
+         114 | Grace      | Ellis       | 1
+         181 | Ana        | Bradley     | 1
+         554 | Dwayne     | Olvera      | 1
+         191 | Jeanette   | Greene      | 1
+         295 | Daisy      | Bates       | 1
+          11 | Lisa       | Anderson    | 1
+         135 | Juanita    | Mason       | 1
+         534 | Christian  | Jung        | 1
+         252 | Mattie     | Hoffman     | 1
+         537 | Clinton    | Buford      | 1
+         336 | Joshua     | Mark        | 1
+         508 | Milton     | Howland     | 1
+         431 | Joel       | Francisco   | 1
+         597 | Freddie    | Duggan      | 1
+         369 | Fred       | Wheat       | 1
+          87 | Wanda      | Patterson   | 1
+         178 | Marion     | Snyder      | 1
+         388 | Craig      | Morrell     | 1
+          14 | Betty      | White       | 1
+         352 | Albert     | Crouse      | 1
+         476 | Derrick    | Bourque     | 1
+         493 | Brent      | Harkins     | 1
+         472 | Greg       | Robins      | 1
+         530 | Darryl     | Ashcraft    | 1
+         142 | April      | Burns       | 1
+         479 | Zachary    | Hite        | 1
+          33 | Anna       | Hill        | 1
+         512 | Cecil      | Vines       | 1
+         108 | Tracy      | Cole        | 1
+         215 | Jessie     | Banks       | 1
+          52 | Julie      | Sanchez     | 1
+          69 | Judy       | Gray        | 1
+         317 | Edward     | Baugh       | 1
+         366 | Brandon    | Huey        | 1
+         334 | Raymond    | Mcwhorter   | 1
+         440 | Bernard    | Colby       | 1
+         441 | Mario      | Cheatham    | 1
+         505 | Rafael     | Abney       | 1
+         219 | Willie     | Howell      | 1
+         557 | Felix      | Gaffney     | 1
+         421 | Lee        | Hawks       | 1
+         296 | Ramona     | Hale        | 1
+         188 | Melanie    | Armstrong   | 1
+         521 | Roland     | South       | 1
+         592 | Terrance   | Roush       | 1
+         282 | Jenny      | Castro      | 1
+         324 | Gary       | Coy         | 1
+         107 | Florence   | Woods       | 2
+         175 | Annette    | Olson       | 2
+          42 | Carolyn    | Perez       | 2
+         155 | Gail       | Knight      | 2
+         216 | Natalie    | Meyer       | 2
+          60 | Mildred    | Bailey      | 2
+         163 | Cathy      | Spencer     | 2
+         354 | Justin     | Ngo         | 2
+          15 | Helen      | Harris      | 2
+         361 | Lawrence   | Lawton      | 2
+          43 | Christine  | Roberts     | 2
+         560 | Jordan     | Archuleta   | 2
+         267 | Margie     | Wade        | 2
+         457 | Bill       | Gavin       | 2
+         516 | Elmer      | Noe         | 2
+         269 | Cassandra  | Walters     | 2
+          53 | Heather    | Morris      | 2
+         228 | Allison    | Stanley     | 2
+         208 | Lucy       | Wheeler     | 2
+         448 | Miguel     | Betancourt  | 2
+         284 | Sonia      | Gregory     | 2
+         576 | Morris     | Mccarter    | 2
+          75 | Tammy      | Sanders     | 3
+(159 rows)
+
+3. Give the most popular actors by store location
+   (1)Two stores mix together:
+      select ad.address, a.first_name, a.last_name, count(a.actor_id) as p
+      from inventory i
+      join rental r on r.inventory_id = i.inventory_id
+      join film_actor f on f.film_id = i.film_id
+      join actor a on a.actor_id = f.actor_id
+      join staff s on s.staff_id = r.staff_id
+      join store st on st.store_id = s.store_id
+      join address ad on ad.address_id = s.address_id
+      group by a.actor_id, ad.address
+      order by p desc
+	
+	output:
+       address        | first_name  |  last_name   |  p  
+----------------------+-------------+--------------+-----
+ 23 Workhaven Lane    | Gina        | Degeneres    | 378
+ 1411 Lillydale Drive | Gina        | Degeneres    | 375
+ 23 Workhaven Lane    | Matthew     | Carrey       | 353
+ 1411 Lillydale Drive | Mary        | Keitel       | 339
+ 23 Workhaven Lane    | Angela      | Witherspoon  | 337
+ 23 Workhaven Lane    | Mary        | Keitel       | 335
+ 1411 Lillydale Drive | Matthew     | Carrey       | 325
+ 1411 Lillydale Drive | Walter      | Torn         | 323
+ 1411 Lillydale Drive | Angela      | Witherspoon  | 317
+ 23 Workhaven Lane    | Walter      | Torn         | 317
+ 1411 Lillydale Drive | Henry       | Berry        | 314
+ 1411 Lillydale Drive | Val         | Bolger       | 310
+ 1411 Lillydale Drive | Jayne       | Nolte        | 308
+ 23 Workhaven Lane    | Sandra      | Kilmer       | 307
+ 23 Workhaven Lane    | Helen       | Voight       | 306
+ 1411 Lillydale Drive | Sean        | Guiness      | 305
+ 23 Workhaven Lane    | Scarlett    | Damon        | 305
+ 23 Workhaven Lane    | Jayne       | Nolte        | 303
+ 23 Workhaven Lane    | Kevin       | Garland      | 302
+ 23 Workhaven Lane    | Henry       | Berry        | 298
+ 1411 Lillydale Drive | Cameron     | Zellweger    | 297
+ 1411 Lillydale Drive | Sandra      | Kilmer       | 297
+ 1411 Lillydale Drive | Woody       | Hoffman      | 296
+ 23 Workhaven Lane    | Warren      | Nolte        | 295
+ 23 Workhaven Lane    | Angela      | Hudson       | 295
+ 23 Workhaven Lane    | Val         | Bolger       | 295
+ 23 Workhaven Lane    | Sean        | Guiness      | 294
+ 1411 Lillydale Drive | Renee       | Tracy        | 294
+ 23 Workhaven Lane    | Ewan        | Gooding      | 292
+ 1411 Lillydale Drive | Julia       | Mcqueen      | 288
+ 23 Workhaven Lane    | Gregory     | Gooding      | 287
+ 1411 Lillydale Drive | Michael     | Bolger       | 285
+ 1411 Lillydale Drive | Vivien      | Basinger     | 285
+ 1411 Lillydale Drive | Jada        | Ryder        | 284
+ 1411 Lillydale Drive | Reese       | Kilmer       | 284
+ 1411 Lillydale Drive | Ben         | Willis       | 283
+ 23 Workhaven Lane    | Sidney      | Crowe        | 282
+ 23 Workhaven Lane    | Mary        | Tandy        | 280
+
+ (2)Only store_id = 1
+    select ad.address, a.first_name, a.last_name, count(a.actor_id) as p
+    from inventory i
+    join rental r on r.inventory_id = i.inventory_id
+    join film_actor f on f.film_id = i.film_id
+    join actor a on a.actor_id = f.actor_id
+    join staff s on s.staff_id = r.staff_id
+    join store st on st.store_id = s.store_id
+    join address ad on ad.address_id = s.address_id
+    where r.staff_id = 1
+    group by a.actor_id, ad.address
+    order by p desc;
+
+	output:
+      address      | first_name  |  last_name   |  p  
+-------------------+-------------+--------------+-----
+ 23 Workhaven Lane | Gina        | Degeneres    | 378
+ 23 Workhaven Lane | Matthew     | Carrey       | 353
+ 23 Workhaven Lane | Angela      | Witherspoon  | 337
+ 23 Workhaven Lane | Mary        | Keitel       | 335
+ 23 Workhaven Lane | Walter      | Torn         | 317
+ 23 Workhaven Lane | Sandra      | Kilmer       | 307
+ 23 Workhaven Lane | Helen       | Voight       | 306
+ 23 Workhaven Lane | Scarlett    | Damon        | 305
+ 23 Workhaven Lane | Jayne       | Nolte        | 303
+ 23 Workhaven Lane | Kevin       | Garland      | 302
+ 23 Workhaven Lane | Henry       | Berry        | 298
+ 23 Workhaven Lane | Val         | Bolger       | 295
+ 23 Workhaven Lane | Warren      | Nolte        | 295
+ 23 Workhaven Lane | Angela      | Hudson       | 295
+ 23 Workhaven Lane | Sean        | Guiness      | 294
+ 23 Workhaven Lane | Ewan        | Gooding      | 292
+ 23 Workhaven Lane | Gregory     | Gooding      | 287
+ 23 Workhaven Lane | Sidney      | Crowe        | 282
+ 23 Workhaven Lane | Mary        | Tandy        | 280
+ 23 Workhaven Lane | Christian   | Akroyd       | 280
+ 23 Workhaven Lane | Albert      | Nolte        | 278
+ 23 Workhaven Lane | Reese       | West         | 277
+ 23 Workhaven Lane | Ian         | Tandy        | 276
+ 23 Workhaven Lane | Jada        | Ryder        | 276
+ 23 Workhaven Lane | Jodie       | Degeneres    | 273
+ 23 Workhaven Lane | Fay         | Winslet      | 273
+ 23 Workhaven Lane | Uma         | Wood         | 272
+ 23 Workhaven Lane | Whoopi      | Hurt         | 272
+ 23 Workhaven Lane | Harvey      | Hope         | 271
+ 23 Workhaven Lane | Albert      | Johansson    | 269
+ 23 Workhaven Lane | Ben         | Willis       | 268
+ 23 Workhaven Lane | Michael     | Bolger       | 268
+ 23 Workhaven Lane | Rip         | Crawford     | 267
+ 23 Workhaven Lane | Jayne       | Neeson       | 266
+ 23 Workhaven Lane | Susan       | Davis        | 266
+ 23 Workhaven Lane | Vivien      | Bergen       | 266
+ 23 Workhaven Lane | Matthew     | Leigh        | 265
+ 23 Workhaven Lane | Kenneth     | Torn         | 265
+ 23 Workhaven Lane | Reese       | Kilmer       | 264
+ 23 Workhaven Lane | Woody       | Hoffman      | 264
+ 23 Workhaven Lane | Natalie     | Hopkins      | 263
+ 23 Workhaven Lane | Cameron     | Zellweger    | 263
+ 23 Workhaven Lane | Julia       | Mcqueen      | 261
+ 23 Workhaven Lane | Angelina    | Astaire      | 261
+
+ (3)Only store_id = 2
+    select ad.address, a.first_name, a.last_name, count(a.actor_id) as p
+    from inventory i
+    join rental r on r.inventory_id = i.inventory_id
+    join film_actor f on f.film_id = i.film_id
+    join actor a on a.actor_id = f.actor_id
+    join staff s on s.staff_id = r.staff_id
+    join store st on st.store_id = s.store_id
+    join address ad on ad.address_id = s.address_id
+    where r.staff_id = 2
+    group by a.actor_id, ad.address
+    order by p desc;
+
+	output:
+       address        | first_name  |  last_name   |  p  
+----------------------+-------------+--------------+-----
+ 1411 Lillydale Drive | Gina        | Degeneres    | 375
+ 1411 Lillydale Drive | Mary        | Keitel       | 339
+ 1411 Lillydale Drive | Matthew     | Carrey       | 325
+ 1411 Lillydale Drive | Walter      | Torn         | 323
+ 1411 Lillydale Drive | Angela      | Witherspoon  | 317
+ 1411 Lillydale Drive | Henry       | Berry        | 314
+ 1411 Lillydale Drive | Val         | Bolger       | 310
+ 1411 Lillydale Drive | Jayne       | Nolte        | 308
+ 1411 Lillydale Drive | Sean        | Guiness      | 305
+ 1411 Lillydale Drive | Cameron     | Zellweger    | 297
+ 1411 Lillydale Drive | Sandra      | Kilmer       | 297
+ 1411 Lillydale Drive | Woody       | Hoffman      | 296
+ 1411 Lillydale Drive | Renee       | Tracy        | 294
+ 1411 Lillydale Drive | Julia       | Mcqueen      | 288
+ 1411 Lillydale Drive | Vivien      | Basinger     | 285
+ 1411 Lillydale Drive | Michael     | Bolger       | 285
+ 1411 Lillydale Drive | Jada        | Ryder        | 284
+ 1411 Lillydale Drive | Reese       | Kilmer       | 284
+ 1411 Lillydale Drive | Ben         | Willis       | 283
+ 1411 Lillydale Drive | Angela      | Hudson       | 279
+ 1411 Lillydale Drive | Ewan        | Gooding      | 279
+ 1411 Lillydale Drive | Reese       | West         | 276
+ 1411 Lillydale Drive | Ed          | Guiness      | 276
+ 1411 Lillydale Drive | Sidney      | Crowe        | 275
+ 1411 Lillydale Drive | Lucille     | Tracy        | 273
+ 1411 Lillydale Drive | Julianne    | Dench        | 272
+ 1411 Lillydale Drive | Christian   | Akroyd       | 272
+ 1411 Lillydale Drive | Natalie     | Hopkins      | 271
+ 1411 Lillydale Drive | Fay         | Winslet      | 270
+ 1411 Lillydale Drive | Mena        | Temple       | 270
+ 1411 Lillydale Drive | Warren      | Nolte        | 269
+ 1411 Lillydale Drive | Scarlett    | Damon        | 267
+ 1411 Lillydale Drive | Kenneth     | Torn         | 267
+
+
+4. Which store is more profitable, assuming all movies cost $15 per inventory item to purchase.
+  select s.store, (s.total_sales - 15*count(i.inventory_id)) as profit
+  from sales_by_store s
+  join staff_list sl on sl.name = s.manager
+  join inventory i on i.store_id = sl.sid
+  group by s.store, s.total_sales
+
+	output:
+        store        |  profit  
+---------------------+----------
+ Woodridge,Australia | -3981.87
+ Lethbridge,Canada   | -3421.09
+
+From the above talbe, we can tell both of the two stores have negative profit. The store in Canada, which is store_id 1, is less negative, so store_id 1 is more profitable. 
+
+
+
+
+
