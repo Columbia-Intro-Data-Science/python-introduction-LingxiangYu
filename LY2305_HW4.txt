@@ -1,4 +1,7 @@
 HW4 LY2305
+This is the sql code and outputs txt file. For the sql code only, please check LY2305_HW4.sql file. 
+The ouputs below are only partial result. For the full result, please check LY2305_HW4_output.csv. 
+Thank you!
 
 1. Give a count of all videos currently out
    select count(1) from rental r
@@ -30,7 +33,7 @@ HW4 LY2305
          412 | Allen      | Butterfield | 1
          115 | Wendy      | Harrison    | 1
          525 | Adrian     | Clary       | 1
-	 236 | Marcia     | Dean        | 1
+	       236 | Marcia     | Dean        | 1
          450 | Jay        | Robb        | 1
          192 | Laurie     | Lawrence    | 1
          527 | Cory       | Meehan      | 1
@@ -133,48 +136,8 @@ HW4 LY2305
           33 | Anna       | Hill        | 1
          512 | Cecil      | Vines       | 1
          108 | Tracy      | Cole        | 1
-         215 | Jessie     | Banks       | 1
-          52 | Julie      | Sanchez     | 1
-          69 | Judy       | Gray        | 1
-         317 | Edward     | Baugh       | 1
-         366 | Brandon    | Huey        | 1
-         334 | Raymond    | Mcwhorter   | 1
-         440 | Bernard    | Colby       | 1
-         441 | Mario      | Cheatham    | 1
-         505 | Rafael     | Abney       | 1
-         219 | Willie     | Howell      | 1
-         557 | Felix      | Gaffney     | 1
-         421 | Lee        | Hawks       | 1
-         296 | Ramona     | Hale        | 1
-         188 | Melanie    | Armstrong   | 1
-         521 | Roland     | South       | 1
-         592 | Terrance   | Roush       | 1
-         282 | Jenny      | Castro      | 1
-         324 | Gary       | Coy         | 1
-         107 | Florence   | Woods       | 2
-         175 | Annette    | Olson       | 2
-          42 | Carolyn    | Perez       | 2
-         155 | Gail       | Knight      | 2
-         216 | Natalie    | Meyer       | 2
-          60 | Mildred    | Bailey      | 2
-         163 | Cathy      | Spencer     | 2
-         354 | Justin     | Ngo         | 2
-          15 | Helen      | Harris      | 2
-         361 | Lawrence   | Lawton      | 2
-          43 | Christine  | Roberts     | 2
-         560 | Jordan     | Archuleta   | 2
-         267 | Margie     | Wade        | 2
-         457 | Bill       | Gavin       | 2
-         516 | Elmer      | Noe         | 2
-         269 | Cassandra  | Walters     | 2
-          53 | Heather    | Morris      | 2
-         228 | Allison    | Stanley     | 2
-         208 | Lucy       | Wheeler     | 2
-         448 | Miguel     | Betancourt  | 2
-         284 | Sonia      | Gregory     | 2
-         576 | Morris     | Mccarter    | 2
-          75 | Tammy      | Sanders     | 3
-(159 rows)
+
+
 
 3. Give the most popular actors by store location
    (1)Two stores mix together:
